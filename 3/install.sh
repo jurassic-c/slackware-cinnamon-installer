@@ -14,5 +14,6 @@ wget https://github.com/linuxmint/cinnamon-desktop/archive/2.0.4.tar.gz -O cinna
 wget https://git.gnome.org/browse/gnome-common/snapshot/gnome-common-3.10.0.tar.gz -O gnome-common-3.10.0.tar.gz
 wget https://download.gnome.org/sources/json-glib/0.16/json-glib-0.16.2.tar.xz -O json-glib-0.16.2.tar.xz
 wget https://github.com/GNOME/cogl/releases/tag/1.10.4 -O cogl-1.10.4
+wget http://www.kernel.org/pub/linux/bluetooth/bluez-4.101.tar.xz
 
 /bin/bash ../installpkgs.sh

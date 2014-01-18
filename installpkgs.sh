@@ -16,6 +16,9 @@ do
 		elif [ -a configure ]; then
 			./configure --prefix=/usr --libdir=/usr/lib64 --enable-compile-warnings=no && make && make install
 		fi
+		if [ $? != 0 ];then
+			exit $?
+		fi
 		cd ..
 	fi
 done
