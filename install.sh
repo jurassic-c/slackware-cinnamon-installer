@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for d in 1 2 3 4
+for d in 4 3 2 1
 do
 	cd $d
 	for f in `ls`
@@ -16,3 +16,6 @@ done
 git clone https://github.com/linuxmint/Cinnamon.git cinnamon
 cd cinnamon
 ./autogen.sh --prefix=/usr --libdir=/usr/lib64 --enable-compile-warnings=no && make && make install
+
+cd ../post
+/bin/bash install.sh

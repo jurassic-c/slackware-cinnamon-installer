@@ -11,12 +11,14 @@ do
 		cd $f
 		echo
 		echo "COMPILING: $f"
+		touch ERRORED
 		if [ -a autogen.sh ]; then
-			./autogen.sh --prefix=/usr --libdir=/usr/lib64 --enable-compile-warnings=no && make && make install
+			libtoolize
+			./autogen.sh --prefix=/usr --libdir=/usr/lib64 --enable-compile-warnings=no && make && make install && rm ERRORED && touch YAY_SUCCESS
 		elif [ -a configure ]; then
-			./configure --prefix=/usr --libdir=/usr/lib64 --enable-compile-warnings=no && make && make install
+			./configure --prefix=/usr --libdir=/usr/lib64 --enable-compile-warnings=no && make && make install && rm ERRORED && touch YAY_SUCCESS
 		fi
-		if [ $? != 0 ];then
+		if [ -f ERRORED ];then
 			exit $?
 		fi
 		cd ..
