@@ -2,10 +2,15 @@
 
 for d in 1 2 3 4
 do
-	rm -Rf $d
-	mkdir $d
 	cd $d
+	for f in `ls`
+	do
+		if [ -d $f ];then
+			rm -Rf $f
+		fi
+	done
 	/bin/bash install.sh
+	cd ..
 done
 
 git clone https://github.com/linuxmint/Cinnamon.git cinnamon
