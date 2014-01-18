@@ -10,6 +10,11 @@ do
 		fi
 	done
 	/bin/bash install.sh
+	rc=$?
+	echo "EXITED WITH: $rc"
+	if [ $rc != 0 ]; then
+		exit $rc
+	fi
 	cd ..
 done
 

@@ -17,3 +17,7 @@ wget https://github.com/GNOME/cogl/archive/1.14.0.tar.gz -O cogl-1.14.0.tar.gz
 wget http://www.kernel.org/pub/linux/bluetooth/bluez-4.101.tar.xz
 
 /bin/bash ../installpkgs.sh
+rc=$?
+if [ $rc != 0 ]; then
+	exit $rc
+fi

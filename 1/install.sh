@@ -13,3 +13,7 @@ wget http://ftp.gnome.org/pub/GNOME/sources/gstreamer/0.10/gstreamer-0.10.36.tar
 wget http://cgit.freedesktop.org/xorg/lib/libXfixes/snapshot/libXfixes-5.0.tar.gz
 
 /bin/bash ../installpkgs.sh
+rc=$?
+if [ $rc != 0 ]; then
+	exit $rc
+fi

@@ -6,3 +6,7 @@ git clone https://git.gitorious.org/gusb/gusb.git
 wget https://github.com/GNOME/yelp-tools/archive/3.11.3.tar.gz -O yelp-tools-3.11.3.tar.gz
 
 /bin/bash ../installpkgs.sh
+rc=$?
+if [ $rc != 0 ]; then
+	exit $rc
+fi
